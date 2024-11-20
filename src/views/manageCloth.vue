@@ -127,7 +127,7 @@
   const products = ref([]);
   const loading = ref(false);
   const error = ref(null);
-  const modal = ref(null);
+  let modalInstance = null;
   const isEditing = ref(false);
   const formData = ref({
     name: '',
@@ -143,7 +143,7 @@
   onMounted(() => {
     const modalElement = document.getElementById('productModal');
     if (modalElement) {
-      modal.value = new Modal(modalElement);
+      modalInstance = new Modal(modalElement);
     }
     fetchProducts();
   });
@@ -163,7 +163,7 @@
   };
   
   // Open modal for add/edit
-  const openModal = (product = null) => {
+  const openModal = (product) => {
     isEditing.value = !!product;
     if (product) {
       formData.value = { ...product };
@@ -178,8 +178,8 @@
         stock: ''
       };
     }
-    if (modal.value) {
-      modal.value.show();
+    if (modalInstance) {
+      modalInstance.show();
     }
   };
   
@@ -192,7 +192,7 @@
         await axios.post('http://localhost:3000/products', formData.value);
       }
       await fetchProducts();
-      modal.value.hide();
+      modalInstance.hide();
     } catch (err) {
       error.value = 'Error saving product. Please try again later.';
       console.error('Error saving product:', err);
