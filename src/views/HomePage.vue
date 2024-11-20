@@ -25,6 +25,9 @@ import ClothList from "@/views/clothList.vue";
               <p class="lead">
                 We are a store that sells clothes
               </p>
+              <router-link to="/manage-products" class="btn btn-primary btn-lg">
+                <i class="fas fa-cog me-2"></i>Manage Products
+              </router-link>
             </div>
           </div>
           <div class="row">

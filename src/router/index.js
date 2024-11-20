@@ -24,8 +24,8 @@ import ElDropdowns from "../layouts/sections/elements/dropdowns/DropdownsView.vu
 import ElProgressBars from "../layouts/sections/elements/progress-bars/ProgressBarsView.vue";
 import ElToggles from "../layouts/sections/elements/toggles/TogglesView.vue";
 import ElTypography from "../layouts/sections/elements/typography/TypographyView.vue";
-import ClothList from "../views/clothList.vue";
-import ClothDetail from "../views/clothDetail.vue";
+import manageCloth from '../views/manageCloth.vue';
+import ClothDetail from '../views/clothDetail.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -44,6 +44,11 @@ const router = createRouter({
       name: 'clothdetail',
       component: ClothDetail,
       props: true,
+    },
+    {
+      path: '/manage-products',
+      name: 'manageproducts',
+      component: manageCloth
     },
     {
       path: "/presentation",
