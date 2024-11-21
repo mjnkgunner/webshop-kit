@@ -3,6 +3,7 @@ import NavbarDefault from "@/examples/navbars/NavbarDefault.vue";
 import FooterCentered from "@/examples/footers/FooterCentered.vue";
 import Header from "@/examples/Header.vue";
 import ClothList from "@/views/clothList.vue";
+import NotificationExample from "./notifcationExample.vue";
 </script>
 
 <template>
@@ -32,6 +33,9 @@ import ClothList from "@/views/clothList.vue";
           </div>
           <div class="row">
             <ClothList />
+          </div>
+          <div class="row">
+            <NotificationExample />
           </div>
         </div>
       </section>
